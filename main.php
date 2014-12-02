@@ -4,9 +4,9 @@ $login=$_SESSION['log'];
 ?>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Solar System</title>
-	<link href="css/solar_system.css" rel="stylesheet" type="tex/css">
+  <meta charset="utf-8">
+  <title>Solar System</title>
+  <link href="css/solar_system.css" rel="stylesheet" type="tex/css">
   <style>
    .name_in_header{
   color: white;
@@ -44,19 +44,23 @@ $login=$_SESSION['log'];
           </form>";
           else 
           {
-            echo "<form class='navbar-form navbar-right'><span class='name_in_header'>Добро пожаловать, Вы $login </span><a href = 'php\\logout.php'><button type='submit' class='btn btn-success'>Выйти</button></a></form>";
+            echo "<form class='navbar-form navbar-right'><span class='name_in_header'>Добро пожаловать, Вы $login </span><a href = 'php\\logout.php' class='btn btn-success'>Выйти</a></form>";
           }
           ?>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
     <?php
+          if ($_SESSION['err']==1)
+      {
+       $_SESSION['err']=0;
+       echo"<div class='nah'>Неправильный логин или пароль</div>"; 
+      }
      if (!empty($_SESSION['log']))
       {
-        echo "<div class='nah'><h2>Это главная страница ёпта!</h2>
-        <h3>О да я вижу ты $login</h3>";
+        echo "<div class='nah'><h2>Это главная страница ёпта!</h2>";
         if ($_SESSION['ac_lvl']==3)
-        echo "<h4>Это может видеть только админ</h4></div>";
+        echo "<h3>Это может видеть только админ</h3></div>";
       }
     ?>
 </body>

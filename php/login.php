@@ -12,6 +12,7 @@ if ($res1=""||$row[password]!=$password)
  {
   //header("Refresh: 2;  url=..\main.php");
   //echo "Wrong Login/Password";
+ 	$_SESSION['err']=1;
  	header("Location: ..\main.php");
  }
  else 
