@@ -44,7 +44,7 @@ $login=$_SESSION['log'];
           </form>";
           else 
           {
-            echo "<form class='navbar-form navbar-right'><span class='name_in_header'>Добро пожаловать, Вы $login </span><a href = 'php\\logout.php'><button type='submit' class='btn btn-success'>Выйти</button></a></form>";
+            echo "<form class='navbar-form navbar-right'><span class='name_in_header'>Добро пожаловать, Вы $login </span><a href = 'php\\logout.php' class='btn btn-success'>Выйти</a></form>";
           }
           ?>
         </div><!--/.navbar-collapse -->
