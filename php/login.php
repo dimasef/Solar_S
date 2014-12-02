@@ -10,13 +10,14 @@ $res1 = mysql_query($querry);
 $row = mysql_fetch_array($res1);
 if ($res1=""||$row[password]!=$password)
  {
-  header("Refresh: 2;  url=..\login.html");
-  echo "Wrong Login/Password";
+  //header("Refresh: 2;  url=..\main.php");
+  //echo "Wrong Login/Password";
+ 	header("Location: ..\main.php");
  }
  else 
  {
  	$_SESSION['log']=$username;
     $_SESSION['ac_lvl']=$row[access_level];
- 	header("Location: main.php");
+ 	header("Location: ..\main.php");
  }
 ?>

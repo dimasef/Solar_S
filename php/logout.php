@@ -4,7 +4,7 @@ if (isset($_SESSION['log']))
 {
 	unset($_SESSION['log']);
 	unset($_SESSION['ac_lvl']);
-	header("Location: ..\login.html");
+	header("Location: ..\main.php");
 }
 else 
 	echo "You are not logged in";
