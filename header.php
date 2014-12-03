@@ -7,15 +7,7 @@ $login=$_SESSION['log'];
   <meta charset="utf-8">
   <title>Solar System</title>
   <link href="css/solar_system.css" rel="stylesheet" type="tex/css">
-  <style>
-   .name_in_header{
-  color: white;
-  padding-right: 15px;
- }
- .nah{
-  margin-top: 65px;
- }
-  </style>
+  <link href="css/styles.css" rel="stylesheet" type="tex/css">
 </head>
 <body>
 
@@ -41,6 +33,7 @@ $login=$_SESSION['log'];
               <input type=\"password\" placeholder=\"Password\" name=\"password\" class=\"form-control\"required>
             </div>
             <button type='submit' class='btn btn-success' name='Login'>Войти</button>
+            <a href = 'registration.php' class='btn btn-success btn_registr'>Регистрация</a>
           </form>";
           else 
           {
@@ -57,5 +50,5 @@ $login=$_SESSION['log'];
        echo"<div class='nah'>Неправильный логин или пароль</div>"; 
       }
     ?>
-</body>
-</html>
+
+
