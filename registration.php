@@ -9,7 +9,7 @@ session_start();
 	<?php
 	include "header.php";
 	?>
- <form action="registration.php" method="post" class="form-horizontal registr_form">
+ <form action="" method="post" class="form-horizontal registr_form">
 
  
   </div>
@@ -89,10 +89,13 @@ if (isset($_POST['submit']))
     	  }
 
 if($password != $repeat_password){
-	 exit ("Вы повторили неверный пароль!");
+	 exit ("<div class='alert alert-danger' role='alert'>Вы повторили неверный пароль!</div>");
 }
 
-  
+  if (empty($login) or empty($password) or empty($email) or empty($repeat_password)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
+    {
+    exit ("<div class='alert alert-danger' role='alert'>Вы ввели не всю информацию, вернитесь назад и заполните все поля!</div>");
+    }
 
   
     $login = stripslashes($login);
@@ -114,7 +117,7 @@ mysql_select_db('solar_system',$conn);
     $result = mysql_query("SELECT id FROM users WHERE login='$login'");
     $myrow = mysql_fetch_array($result);
     if (!empty($myrow['id'])) {
-    exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
+    exit ("<div class='alert alert-danger' role='alert'>Извините, введённый вами логин уже зарегистрирован. Введите другой логин.</div>");
 
     }
  // если такого нет, то сохраняем данные
@@ -122,10 +125,10 @@ mysql_select_db('solar_system',$conn);
     // Проверяем, есть ли ошибки
     if ($result2=='TRUE')
     {
-    echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. ";
+    echo "<div class='alert alert-success' role='alert'>Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. </div>";
     }
  else {
-    echo "Ошибка! Вы не зарегистрированы.";
+    echo "<div class='alert alert-danger' role='alert'>Ошибка! Вы не зарегистрированы.</div>";
     }
 }
     ?>
