@@ -97,10 +97,13 @@ if($password != $repeat_password){
     $login = htmlspecialchars($login);
     $password = stripslashes($password);
     $password = htmlspecialchars($password);
-
+$repeat_password = stripslashes($repeat_password);
+    $repeat_password = htmlspecialchars($repeat_password);
  //удаляем лишние пробелы
     $login = trim($login);
     $password = trim($password);
+    $repeat_password = trim($repeat_password);
+    $email = trim($email);
  
 $conn = mysql_connect('localhost','root','root') 
 or die ("Ooops something went wrong! <br>".mysql_error());
