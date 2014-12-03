@@ -13,4 +13,10 @@
  }
  .registr_form{
  	padding-top: 85px;
+ 	padding-left: 12%;
+ }
+ .registr_form h2{
+ 	text-align: center;
+ 	padding-bottom: 10px;
+ 	padding-right: 15%;
  }
