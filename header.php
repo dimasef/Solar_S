@@ -47,7 +47,7 @@ $login=$_SESSION['log'];
           if ($_SESSION['err']==1)
       {
        $_SESSION['err']=0;
-       echo"<div class='nah'>Неправильный логин или пароль</div>"; 
+       echo"<div class='nah'><div class='alert alert-danger' role='alert'>Неправильный логин или пароль.</div></div>"; 
       }
     ?>
 
