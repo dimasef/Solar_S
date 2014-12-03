@@ -37,7 +37,8 @@ $login=$_SESSION['log'];
           </form>";
           else 
           {
-            echo "<form class='navbar-form navbar-right'><span class='name_in_header'>Добро пожаловать, Вы $login </span><a href = 'logout.php' class='btn btn-success'>Выйти</a></form>";
+            echo "<form class='navbar-form navbar-right'><span class='name_in_header'>Добро пожаловать, Вы $login </span><a href = 'logout.php' class='btn btn-success'>Выйти
+            </a><a href = 'profile.php' class='btn btn-success'>Профиль</a></form>";
           }
           ?>
         </div><!--/.navbar-collapse -->
