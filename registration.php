@@ -13,6 +13,7 @@ session_start();
 
  
   </div>
+  <h2>Форма Регистрации</h2>
   <div class="form-group">
     <label class="control-label col-xs-3" for="firstName">Логин:</label>
     <div class="col-xs-9">
@@ -44,10 +45,14 @@ session_start();
   <div class="form-group">
     <div class="col-xs-offset-3 col-xs-9">
       <input type="submit" class="btn btn-primary" name="submit" value="Регистрация">
+      <a class="btn btn-default" href="main.php" role="button">Назад</a>
     </div>
   </div>
 </form>
 <?php
+
+if (isset($_POST['submit']))
+{
     if (isset($_POST['login'])) 
     { 
     	$login = $_POST['login']; 
@@ -87,11 +92,8 @@ if($password != $repeat_password){
 	 exit ("Вы повторили неверный пароль!");
 }
 
-   
- if (empty($login) or empty($password) or empty($repeat_password) or empty($email)) 
-    {
-    exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!");
-    }
+  
+
   
     $login = stripslashes($login);
     $login = htmlspecialchars($login);
@@ -105,7 +107,7 @@ $repeat_password = stripslashes($repeat_password);
     $repeat_password = trim($repeat_password);
     $email = trim($email);
  
-$conn = mysql_connect('localhost','solar','test_pass') 
+$conn = mysql_connect('localhost','root','root') 
 or die ("Ooops something went wrong! <br>".mysql_error());
 mysql_select_db('solar_system',$conn); 
 
@@ -113,6 +115,7 @@ mysql_select_db('solar_system',$conn);
     $myrow = mysql_fetch_array($result);
     if (!empty($myrow['id'])) {
     exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
+
     }
  // если такого нет, то сохраняем данные
     $result2 = mysql_query ("INSERT INTO users (login,password,email,access_level) VALUES('$login','$password','$email',1)");
@@ -124,6 +127,7 @@ mysql_select_db('solar_system',$conn);
  else {
     echo "Ошибка! Вы не зарегистрированы.";
     }
+}
     ?>
 
 </body>
