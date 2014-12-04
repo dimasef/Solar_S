@@ -7,6 +7,7 @@ session_start();
 </head>
 <body>
 	<?php
+	$_SESSION['page']="profile";
 	include "header.php";
 	$conn = mysql_connect('localhost','solar','test_pass') 
     or die ("Ooops something went wrong! <br>".mysql_error());

@@ -20,7 +20,12 @@ if ($res1=""||$row[password]!=$password)
  {
  	$_SESSION['log']=$username;
     $_SESSION['ac_lvl']=$row[access_level];
+    if ($_SESSION['page']=="reg")
+    {
+    	unset($_SESSION['page']);
+    	header("Location: main.php");
+    }
+    else 
     echo "<script>history.go(-1);</script>";
- 	//header("Location: main.php");
  }
 ?>

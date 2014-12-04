@@ -50,7 +50,7 @@ session_start();
   </div>
 </form>
 <?php
-
+$_SESSION['page']="reg";
 if (isset($_POST['submit']))
 {
     if (isset($_POST['login'])) 

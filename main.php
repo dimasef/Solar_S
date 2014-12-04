@@ -7,6 +7,7 @@ session_start();
 </head>
 <body>
 	<?php
+	unset($_SESSION['page']);
 	include "header.php";
 	?>
 </body>
