@@ -109,8 +109,8 @@ $repeat_password = stripslashes($repeat_password);
     $password = trim($password);
     $repeat_password = trim($repeat_password);
     $email = trim($email);
- 
-$conn = mysql_connect('localhost','root','root') 
+    $password=md5(md5($password)+"kovalyk_ischadie_ada");
+$conn = mysql_connect('localhost','solar','test_pass') 
 or die ("Ooops something went wrong! <br>".mysql_error());
 mysql_select_db('solar_system',$conn); 
 

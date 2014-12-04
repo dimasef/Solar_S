@@ -31,9 +31,10 @@
 		 	}
 		 	 if ($row[password]!=$_POST['password'])
 		 	{
+		 		$pass=md5(md5($_POST[password])+"kovalyk_ischadie_ada");
 		 		if ($the_first)
-		 			$part3="password='$_POST[password]'";
-		 		else $part3=",password='$_POST[password]'";
+		 			$part3="password='$pass'";
+		 		else $part3=",password='$pass'";
 		 	}
 		 	$all_in_one=$part1.$part2.$part3;
 		 	$querry="UPDATE users SET $all_in_one WHERE login=\"$_SESSION[log]\"";

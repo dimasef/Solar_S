@@ -8,7 +8,7 @@ mysql_select_db('solar_system',$conn);
 $querry = "SELECT login,password,access_level FROM users WHERE login=\"$username\"";
 $res1 = mysql_query($querry);
 $row = mysql_fetch_array($res1);
-if ($res1=""||$row[password]!=$password)
+if ($res1=""||$row[password]!=md5(md5($password)+"kovalyk_ischadie_ada"))
  {
   //header("Refresh: 2;  url=..\main.php");
   //echo "Wrong Login/Password";

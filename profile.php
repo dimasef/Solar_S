@@ -26,7 +26,7 @@ session_start();
 	</div>
 	<div class=\"form-group\">
 		<label>Пароль:</label>
-		<input type=\"text\" name = \"password\" value = \"$row[password]\" required >
+		<input type=\"password\" name = \"password\"  required >
 	</div>
 		<input type=\"submit\" value =\"Сохранить\" class=\"btn btn-success\"></form>";
 		if ($_SESSION['changed']==true)
