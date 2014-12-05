@@ -4639,9 +4639,8 @@ select[multiple].input-group-sm>.input-group-addon, select[multiple].input-group
 }
 
 .navbar-inverse {
-    background-color: #222;
-    border-color: #080808
-}
+    background-color: rgba(18, 18, 18, 0.27);
+    border-color: #080808;}
 
 .navbar-inverse .navbar-brand {
     color: #9d9d9d
