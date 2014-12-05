@@ -39,9 +39,9 @@ $('#login-trigger').click(function(){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="main.php">Project name</a>
+          <a class="navbar-brand" href="main.php">Solar System</a>
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Главная</a></li>
+            <li class="active"><a href="main.php">Главная</a></li>
             <li><a href="#about">Новости</a></li>
             <li><a href="#contact">Энциклопедия</a></li>
                <li><a href="#galery">Галерея</a></li>
@@ -61,16 +61,18 @@ $('#login-trigger').click(function(){
       <div id='login-content'>
         <form class='navbar-form navbar-right' role='form' id='form1' name='form1' method='post' action='login.php'>
           <fieldset id='inputs'>
-         
-            <input id='username' class='form-control first_top' type='text' name='username' placeholder='User name' required>  
+         <p class='nameform'>Форма авторизации</p>
+            <input id='username' class='form-control first_top n' type='text' name='username' placeholder='User name' required>  
 
              
-            <input id='password' class='form-control' type='password' name='password' placeholder='Password' required>
+            <input id='password' class='form-control n' type='password' name='password' placeholder='Password' required>
+        
 
           </fieldset>
           <fieldset id='actions'>
-            <button type='submit' class='btn btn-success' name='Login'>Войти</button>
-             <a href='registration.php' class='btn btn-success btn_registr'>Регистрация</a>
+           <a href='registration.php' class='btn btn-primary'>Регистрация</a>
+            <button type='submit' class='btn btn-success log_for' name='Login'>Войти</button>
+            
           </fieldset>
         </form>
       </div>                     
