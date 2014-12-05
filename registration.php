@@ -8,7 +8,27 @@ session_start();
 <body>
 	<?php
 	include "header.php";
+	include "bd.php";
 	?>
+	<style>
+.navbar-inverse {
+background-color: rgba(18, 18, 18, 0.86);
+border-color: #080808;
+}
+nav #login-content {
+background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+background-image: -webkit-linear-gradient(top, rgba(39, 39, 39, 0.96), rgba(96, 96, 96, 0.5));
+background-image: -moz-linear-gradient(top, #fff, #eee);
+background-image: -ms-linear-gradient(top, #fff, #eee);
+background-image: -o-linear-gradient(top, #fff, #eee);
+background-image: linear-gradient(top, #fff, #eee);
+-moz-box-shadow: 0 2px 2px -1px rgba(0,0,0,.9);
+box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.34);
+-moz-border-radius: 3px 0 3px 3px;
+border-radius: 3px 0 3px 3px;
+}
+
+	</style>
  <form action="" method="post" class="form-horizontal registr_form">
 
  
@@ -60,7 +80,6 @@ if (isset($_POST['submit']))
     	{ 
     	unset($login);
     } 
-
     } 
     if (isset($_POST['email'])) 
     { 
@@ -69,7 +88,6 @@ if (isset($_POST['submit']))
     	{ 
     	unset($email);
     } 
-
     } 
    
     if (isset($_POST['password'])) 
@@ -79,7 +97,6 @@ if (isset($_POST['submit']))
     	 	unset($password);
     	 }
     	  }
-
     	  if (isset($_POST['repeat_password'])) 
     	{
     	 $repeat_password=$_POST['repeat_password']; 
@@ -87,16 +104,13 @@ if (isset($_POST['submit']))
     	 	unset($repeat_password);
     	 }
     	  }
-
 if($password != $repeat_password){
 	 exit ("<div class='alert alert-danger' role='alert'>Вы повторили неверный пароль!</div>");
 }
-
   if (empty($login) or empty($password) or empty($email) or empty($repeat_password)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
     {
     exit ("<div class='alert alert-danger' role='alert'>Вы ввели не всю информацию, вернитесь назад и заполните все поля!</div>");
     }
-
   
     $login = stripslashes($login);
     $login = htmlspecialchars($login);
@@ -110,15 +124,10 @@ $repeat_password = stripslashes($repeat_password);
     $repeat_password = trim($repeat_password);
     $email = trim($email);
     $password=md5(md5($password)+"kovalyk_ischadie_ada");
-$conn = mysql_connect('localhost','solar','test_pass') 
-or die ("Ooops something went wrong! <br>".mysql_error());
-mysql_select_db('solar_system',$conn); 
-
     $result = mysql_query("SELECT id FROM users WHERE login='$login'");
     $myrow = mysql_fetch_array($result);
     if (!empty($myrow['id'])) {
     exit ("<div class='alert alert-danger' role='alert'>Извините, введённый вами логин уже зарегистрирован. Введите другой логин.</div>");
-
     }
  // если такого нет, то сохраняем данные
     $result2 = mysql_query ("INSERT INTO users (login,password,email,access_level) VALUES('$login','$password','$email',1)");
