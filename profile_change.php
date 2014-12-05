@@ -19,7 +19,7 @@
 		 		{
       			    $filename = $_FILES['imgupload']['name'];
        				$source = $_FILES['imgupload']['tmp_name'];
-        			$target = "avatars\\"."_".$filename;
+        			$target = "avatars/"."_".$filename;
                     move_uploaded_file($source, $target);
 		 		}
 		 	}
@@ -51,7 +51,7 @@
 		 		}
 		 		else $part3=",password='$pass'";
 		 	}
-		 	 if ($row[image_path]!=$target)
+		 	 if (!empty($_FILES['imgupload']['name']))
 		 	{
 		 		if ($the_first)
 		 			$part4="image_path='$target'";
