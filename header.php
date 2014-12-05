@@ -6,8 +6,8 @@ $login=$_SESSION['log'];
 <head>
   <meta charset="utf-8">
   <title>Solar System</title>
-  <link href="css/solar_system.css" rel="stylesheet" type="tex/css">
-  <link href="css/styles.css" rel="stylesheet" type="tex/css">
+  <link href="css/solar_system.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
    <script type="text/javascript" src="js/bootstrap.js"></script>
       <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -44,7 +44,7 @@ $('#login-trigger').click(function(){
             <li class="active"><a href="#">Главная</a></li>
             <li><a href="#about">Новости</a></li>
             <li><a href="#contact">Энциклопедия</a></li>
-               <li><a href="#gelery">Галерея</a></li>
+               <li><a href="#galery">Галерея</a></li>
            
           </ul>
         </div>
