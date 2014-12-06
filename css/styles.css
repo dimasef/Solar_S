@@ -43,7 +43,9 @@ font-size: 11.5px;
 
 }
 
-
+.pad_top{
+	margin-top: 40px;
+}
 
 .first_top{
 	margin-bottom: 10px;
@@ -98,8 +100,18 @@ nav li #login-content {
 	background-image: url(http://the8guild.com/themes/wordpress/domino/apps/wp-content/uploads/sites/2/2014/10/main_slide_01.jpg);
 background-position: 20% 0px;
 background-size: 109%;
-width: 100%;
+width: 1440px;
 height: 100%;
+}
+.img_pad_group{
+	padding-top: 15px;
+}
+
+#exampleInputPassword2, #exampleInputPassword3{
+margin-top: 10px;
+}
+.row_em_pas{
+color: brown;
 }
 
 
