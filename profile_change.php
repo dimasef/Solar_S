@@ -1,8 +1,9 @@
 <?php
 		session_start();
-		$conn = mysql_connect('localhost','solar','test_pass') 
-        or die ("Ooops something went wrong! <br>".mysql_error());
-        mysql_select_db('solar_system',$conn);
+		include "bd.php";
+		//$conn = mysql_connect('localhost','solar','test_pass') 
+        //or die ("Ooops something went wrong! <br>".mysql_error());
+        //mysql_select_db('solar_system',$conn);
         $querry="SELECT login,password,email,image_path FROM users WHERE login = \"$_SESSION[log]\"";
         $res1 = mysql_query($querry);
         $row = mysql_fetch_array($res1);
@@ -41,7 +42,7 @@
 		 		else 
 		 			$part2=",email='$_POST[email]'";
 		 	}
-		 	 if ($row[password]!=$_POST['password'])
+		 	 if ($row[password]!=$_POST['password']&&$_POST['password']==$_POST['new_password'])
 		 	{
 		 		$pass=md5(md5($_POST[password])+"kovalyk_ischadie_ada");
 		 		if ($the_first)
@@ -60,9 +61,11 @@
 		 	$all_in_one=$part1.$part2.$part3.$part4;
 		 	$querry="UPDATE users SET $all_in_one WHERE login=\"$_SESSION[log]\"";
 		 	mysql_query($querry);
-		 	if (log_change)
+		 	if ($log_change)
 		 		$_SESSION['log']=$_POST['username'];
-		 	$_SESSION['changed']=true;
+		 	if ($_POST['password']==$_POST['new_password'])
+		 	$_SESSION['changed']=1;
+		 else $_SESSION['changed']=2;
 		 	header("Location: profile.php");
 		 }
 		 ?>

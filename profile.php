@@ -28,7 +28,7 @@ vertical-align: middle;
   <?php
   $_SESSION['page']="profile";
   include "header.php";
- include "bd.php";
+  include "bd.php";
     $querry="SELECT login,password,email,image_path FROM users WHERE login = \"$_SESSION[log]\"";
     $res1 = mysql_query($querry);
     $row = mysql_fetch_array($res1);
@@ -60,13 +60,11 @@ vertical-align: middle;
 
 <div id=\"collapseThree\" class=\"accordion-body collapse\" style=\"height: 0px;\">
 <div class=\"accordion-inner\">
-<form class=\"form-inline\" role=\"form\">
   <div class=\"form-group\">
     <label class=\"sr-only\" for=\"exampleInputPassword2\">Password</label>
-    <input type=\"text\"  name = \"username\" class=\"form-control\" id=\"exampleInputPassword2\" placeholder=\"Новый Логин\">
+    <input type=\"text\"  name = \"username\" class=\"form-control\" id=\"exampleInputPassword2\" placeholder=\"Новый Логин\" value=\"$row[login]\">
   </div>
   <button type=\"submit\" class=\"btn btn-success\">Применить</button>
-</form>
 </div>
 </div>
 </div>
@@ -85,13 +83,11 @@ vertical-align: middle;
 
 <div id=\"collapseThree1\" class=\"accordion-body collapse\" style=\"height: 0px;\">
 <div class=\"accordion-inner\">
-<form class=\"form-inline\" role=\"form\">
   <div class=\"form-group\">
     <label class=\"sr-only\" for=\"exampleInputPassword3\">Password</label>
-    <input type=\"text\"  name = \"email\" class=\"form-control\" id=\"exampleInputPassword3\" placeholder=\"Новый Email\">
+    <input type=\"text\"  name = \"email\" class=\"form-control\" id=\"exampleInputPassword3\" placeholder=\"Новый Email\" value=\"$row[email]\">
   </div>
   <button type=\"submit\" class=\"btn btn-success\">Применить</button>
-</form>
 </div>
 </div>
 </div>
@@ -106,17 +102,15 @@ vertical-align: middle;
 </div>
 <div id="collapseTwo" class="accordion-body collapse" style="height: 0px;">
 <div class="accordion-inner">
-<form class="form-inline" role="form">
   <div class="form-group">
     <label class="sr-only" for="exampleInputPassword2">Password</label>
-    <input type="password" class="form-control" \"old_password\" id="exampleInputPassword2" placeholder="Текущий Пароль">
+    <input type="password" class="form-control" name="new_password" id="exampleInputPassword2" placeholder="Новый Пароль">
   </div>
   <div class="form-group">
     <label class="sr-only" for="exampleInputPassword2">New Password</label>
-    <input type="password" class="form-control" \"password\" id="exampleInputPassword2" placeholder="Новый Пароль">
+    <input type="password" class="form-control" name="password" id="exampleInputPassword2" placeholder=" Ёще Раз Новый Пароль">
   </div>
   <button type="submit" class="btn btn-success">Сменить пароль</button>
-</form>
 </div>
 </div>
 </div>
@@ -124,10 +118,15 @@ vertical-align: middle;
   </div>
    
   </form></div>';
-    if ($_SESSION['changed']==true)
+    if ($_SESSION['changed']==1)
     {
       echo"<div class='alert alert-success' role='alert'>Данные успешно обновлены.</div>";
-      $_SESSION['changed']=false;
+      $_SESSION['changed']=0;
+    }
+    else if ($_SESSION['changed']==2)
+    {
+      echo"<div class='alert alert-danger' role='alert'>Введенные пароли не совпадают.</div>";
+      $_SESSION['changed']=0;
     }
   ?>
 </body>
