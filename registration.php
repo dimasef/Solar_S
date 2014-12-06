@@ -28,6 +28,15 @@ box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.34);
 border-radius: 3px 0 3px 3px;
 }
 
+.alert-danger {
+top: 56px;
+width: 100%;
+position: absolute;
+color: #a94442;
+background-color: #f2dede;
+border-color: #ebccd1;
+}
+
 	</style>
  <form action="" method="post" class="form-horizontal registr_form">
 
