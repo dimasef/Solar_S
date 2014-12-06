@@ -113,6 +113,24 @@ margin-top: 10px;
 .row_em_pas{
 color: brown;
 }
+.main_platform{
+	position: relative;
+background: rgba(0, 0, 0, 0.41);
+height: 600;
+top: 90px;
+}
 
+.main_page_text{
+	color: white;
+	text-align: center;
+}
 
-
+.text_about_system{
+font-size: large;
+width: 26%;
+color: rgba(255, 255, 255, 0.96);
+}
+.btn_top_1{
+	margin-left: 400px;
+margin-top: 25px;
+}
