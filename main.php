@@ -31,8 +31,8 @@ border-color: #ebccd1;
 	<div class="text_about_system">
 <p>
 Наша система Solar System позволяет пользователям путешествовать по Солнечной системе не отходя от компьютеров при помощи нового мощного 
- веб симулятора Galactic complex hadronsub system который создает точную 3Д модель солнечной системы
- с возможностью путешествовать и иследовать каждую планету. Помимо симулятора  Galactic complex hadronsub system наша система содержит 
+ веб симулятора Galactic complex hadron sub system который создает точную 3D модель солнечной системы
+ с возможностью путешествовать и иследовать каждую планету. Помимо симулятора  Galactic complex hadron sub system наша система содержит 
  огромный архив данных о каждом небесном теле в пределах нашей солнечной системы.
 </p>
 	</div>
@@ -407,7 +407,7 @@ border-color: #ebccd1;
     
 
 	</script>
-		<a href="#" class="btn btn-primary btn_top_1">Развернуть Galactic complex hadronsub system</a>
+		<a href="Galactic_complex_hadronsub_system.php" class="btn btn-primary1 btn-primary btn_top_1">Развернуть Galactic complex hadron sub system</a>
 </div>
 
 	</div>
