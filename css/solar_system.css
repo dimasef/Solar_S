@@ -13,10 +13,10 @@ html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%
 }
-canvas{
-	left: 32.2%;
+canvas {
+left: 34.2%;
 position: absolute;
-width: 56%!important;
+width: 53%!important;
 height: 390px!important;
 top: 160px;
 }
