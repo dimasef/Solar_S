@@ -411,6 +411,9 @@ border-color: #ebccd1;
 </div>
 
 	</div>
+	<?php
+include "footer.php";
+	 ?>
 
 </body>
 </html>
