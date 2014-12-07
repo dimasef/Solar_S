@@ -109,14 +109,14 @@ vertical-align: middle;
   <div class="form-group">
     <label class="sr-only" for="exampleInputPassword2">New Password</label>
     <input type="password" class="form-control" name="password" id="exampleInputPassword2" placeholder=" Ёще Раз Новый Пароль">
+    <button type="submit" class="btn btn-success" style="margin-top: 15px;">Сменить пароль</button>
   </div>
-  <button type="submit" class="btn btn-success">Сменить пароль</button>
+  
 </div>
 </div>
 </div>
    
   </div>
-   
   </form></div>';
     if ($_SESSION['changed']==1)
     {
@@ -128,6 +128,65 @@ vertical-align: middle;
       echo"<div class='alert alert-danger' role='alert'>Введенные пароли не совпадают.</div>";
       $_SESSION['changed']=0;
     }
+
+if($_SESSION['ac_lvl']==3){
+  $sql = mysql_query("SELECT * FROM users ORDER BY id");
+
+  if(isset($_GET['del'])) 
+  {
+    $del = (int) $_GET['del'];
+    echo $del;
+    $query = "DELETE FROM `solar_system`.`users` WHERE `users`.`id` = $del";
+    mysql_query($query) or die($query . '<br />' . mysql_error());
+} 
+
+echo "<div class='container'> <div class=\"accordion-group\">
+<div class=\"accordion-heading\">
+<a class=\"accordion-toggle collapsed\" data-toggle=\"collapse\" data-parent=\"#accordion5\" href=\"#coll\">
+<h3>Управлять базой пользователей</h3>
+</a>
+</div>
+<div id=\"coll\" class=\"accordion-body collapse\" style=\"height: 0px;\">
+<div class=\"accordion-inner\">";
+
+echo ("<table class='table table-striped' border ='1' style='text-align: center;'>");
+  echo "<tr>
+  <td>id</td>
+  <td>Пользователь</td>
+  <td>Пароль</td>
+  <td>E-mail</td>
+  <td>Статус</td>
+  <td>Аватар</td>
+  <td>Удаление пользователей</td>
+         </tr>";
+
+
+  while ($tablerows = mysql_fetch_row($sql))
+  {
+
+  echo"<tr>
+  <form method='post' action=''>
+    <td>{$tablerows[0]}</td>
+    <td>$tablerows[1]</td>
+    <td>$tablerows[2]</td>
+    <td>$tablerows[3]</td>
+    <td>$tablerows[4]</td>
+    <td>$tablerows[5]</td>
+        <td><a name=\"del\" href=\"profile.php?del=".$tablerows[0]."\"> <button type='button' class='btn btn-danger'>Удалить</button></a></td>
+       </tr> ";
+}
+  echo "</table>
+   </form>";
+
+echo "</div>
+</div>
+</div>
+</div>";
+
+
+}
+
+
   ?>
 </body>
 </html>
