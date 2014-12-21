@@ -22,10 +22,14 @@
     </head>
     <body>
     <br>
- <form action="" method="post">
-  <span>Комментарий</span><br>
-  <textarea id="comment_send" cols="30" rows="10"></textarea><br>
-  <button id="button" >Отправить</button>
+    <?php
+if (!empty($_SESSION['log']))
+      echo"
+ <form method=\"post\"><span>Комментарий</span><br>
+  <textarea id=\"comment_send\" cols=\"30\" rows=\"10\"></textarea><br>
+  <button id=\"button\">Отправить</button>";
+  else echo "<div class='alert alert-danger' role='alert'>Чтобы видеть и оставлять комментарии вы должны войти на сайт!</div>";
+  ?>
    <script>
        var ar_title = document.getElementById('title').innerHTML;
      var button = document.getElementById('button');
