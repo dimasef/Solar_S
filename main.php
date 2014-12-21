@@ -284,8 +284,8 @@ border-color: #ebccd1;
          Earth.position.z = Math.cos(t*0.08)*33500;
 
     
-         Mars.position.x = Math.sin(t*0.06)*398200;
-         Mars.position.z = Math.cos(t*0.06)*398200;
+         Mars.position.x = Math.sin(t*0.06)*39200;
+         Mars.position.z = Math.cos(t*0.06)*39200;
 
          Jupiter.position.x = Math.sin(t*0.08)*47200;
          Jupiter.position.z = Math.cos(t*0.08)*47200;
@@ -407,7 +407,7 @@ border-color: #ebccd1;
     
 
 	</script>
-		<a href="Galactic_complex_hadronsub_system.php" class="btn btn-primary1 btn-primary btn_top_1">Развернуть Galactic complex hadron sub system</a>
+		<a href="Galactic_complex_hadronsub_system.php" class="btn btn-primary1 btn-primary btn_top_1 sub_button">Развернуть Galactic complex hadron sub system</a>
 </div>
 
 	</div>
