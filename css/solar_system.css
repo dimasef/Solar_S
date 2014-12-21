@@ -1170,7 +1170,7 @@ img {
 
 .img-thumbnail {
     display: inline-block;
-    max-width: 100%;
+   max-width: 11%;
     height: auto;
     padding: 4px;
     line-height: 1.42857143;
@@ -4871,8 +4871,8 @@ select[multiple].input-group-sm>.input-group-addon, select[multiple].input-group
 .pager li>a, .pager li>span {
     display: inline-block;
     padding: 5px 14px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+ background-color: rgba(255, 255, 255, 0);
+border: 1px solid rgba(221, 221, 221, 0);
     border-radius: 15px
 }
 
