@@ -6,61 +6,34 @@ session_start();
 	<title>Главная</title>
 		<script src="js/three.min.js"></script>
     <script src="js/FirstPersonControls.js"></script>
-     <style>
-    body{
+  <link href="css/styles.css" rel="stylesheet" type="tex/css">
+<style>
+ body{
         background: black;
         margin: 0px;
     }
-    a{
+     a{
         color: white;
         text-decoration: none;
     }
-    .name_planet_btn{
-       text-decoration:none; text-align:center; 
- padding:8px 47px; 
- border:solid 4px #ffffff; 
-  
- font:12px "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
- font-weight:bold; 
- color:#E5FFFF; 
- background:#000000; 
- -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
- -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
- box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
-  
-   -webkit-transition: with 0.56s linear;
- -moz-transition:  with 0.56s linear;
- -o-transition:  with 0.56s linear;
- transition:  with 0.56s linear;}
-
- .name_planet_btn:hover{
- padding:8px 47px; 
- border:solid 4px #7acc84; 
-  
- font:12px "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
- font-weight:bold; 
- color:#11ed18; 
- background:#000000; 
- -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
- -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
- box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
-  }
-    
-    </style>
+</style>
 </head>
 <body>
 	
-   <div>
-<input class="name_planet_btn" type="button" value="Меркурий" onClick="showPlanetMercury();"/>
-<input class="name_planet_btn" type="button" value="Венера" onClick="showPlanetVenus();"/>
-<input class="name_planet_btn" type="button" value="Земля" onClick="showPlanetEarth();"/>
-<input class="name_planet_btn" type="button" value="Марс" onClick="showPlanetMars();"/>
-<input class="name_planet_btn" type="button" value="Юпитер" onClick="showPlanetJupiter();"/>
-<input class="name_planet_btn" type="button" value="Сатурн" onClick="showPlanetSaturn();"/>
-<input class="name_planet_btn" type="button" value="Уран" onClick="showPlanetUranus();"/>
-<input class="name_planet_btn" type="button" value="Нептун" onClick="showPlanetNeptune();"/>
-<input type="button" value="Назад" onClick="Start();"/>
-<a href="main.php">Выйти из системы</a>
+   <div class="nav_bar_soler_system">
+
+<input class="name_planet_btn" type="button"  onClick="showPlanetMercury();"/>
+
+
+<input class="name_planet_btn1" type="button"  onClick="showPlanetVenus();"/>
+<input class="name_planet_btn2" type="button"  onClick="showPlanetEarth();"/>
+<input class="name_planet_btn3" type="button"  onClick="showPlanetMars();"/>
+<input class="name_planet_btn4" type="button"  onClick="showPlanetJupiter();"/>
+<input class="name_planet_btn5" type="button"  onClick="showPlanetSaturn();"/>
+<input class="name_planet_btn6" type="button"  onClick="showPlanetUranus();"/>
+<input class="name_planet_btn7" type="button"  onClick="showPlanetNeptune();"/>
+<input type="button" class="btn btn-primary" value="В начало" onClick="Start();"/>
+<a class="btn btn-danger" href="index.php">Выйти из системы</a>
     </div>
 
 	<?php
@@ -179,7 +152,7 @@ session_start();
 
 //Солнце ==================================================================
     var sun, sun_geon, sun_mat;
-    sun_geon = new THREE.SphereGeometry(5000,85,85);
+    sun_geon = new THREE.SphereGeometry(8000,95,95);
     var texture = new THREE.ImageUtils.loadTexture('texture/Sun.jpg');
     texture.anisotropy = 8;
     sun_mat = new THREE.MeshPhongMaterial({map: texture, emissive: 0xffffff});
@@ -214,10 +187,21 @@ session_start();
     Earth = new THREE.Mesh(earth_geon,earth_mat);
     Earth.castShadow = true;
     scene.add(Earth);
+    
+
+    var moon, moon_geon, moon_mat;
+    moon_geon = new THREE.SphereGeometry(20,15,15);
+    var texture_3 = new THREE.ImageUtils.loadTexture('texture/moon.jpg');
+    texture3.anisotropy = 8;
+    moon_mat = new THREE.MeshPhongMaterial({map: texture_3});
+    moon = new THREE.Mesh(moon_geon,moon_mat);
+    moon.castShadow = true;
+    scene.add(moon);
+
 
  //Марс ===================================================================
     var Mars, Mars_geon, Mars_mat;
-    Mars_geon = new THREE.SphereGeometry(37,25,25);
+    Mars_geon = new THREE.SphereGeometry(43,25,25);
     var texture4 = new THREE.ImageUtils.loadTexture('texture/Mars.jpg');
     texture4.anisotropy = 8;
     Mars_mat = new THREE.MeshPhongMaterial({map: texture4});
@@ -246,7 +230,7 @@ session_start();
     scene.add(Saturn);
     var Ring_geon = new THREE.Geometry();
     var Ring_mat = new THREE.ParticleBasicMaterial({color: 0x3A3A3A, opacity:0.3,soze:0.6,sizeAttenuation: false});
-    for(var i =0; i<30000; i++){
+    for(var i =0; i<32000; i++){
         var vertex = new THREE.Vector3();
         vertex.x = Math.sin(Math.PI/180*i)*(950-i/100);
         vertex.y = Math.random()*10;
@@ -306,6 +290,11 @@ session_start();
          Ring.position.x = Saturn.position.x;
          Ring.position.z = Saturn.position.z;
 
+         moon.rotation.y -=0.001;
+         moon.position.x = Earth.position.x - 150;
+         moon.position.z = Earth.position.z; 
+         
+
          if(Rotation_planet_stop == false){
          Mercury.position.x = Math.sin(t*0.2)*12000;
          Mercury.position.z = Math.cos(t*0.2)*12000;
@@ -318,24 +307,27 @@ session_start();
          Earth.position.x = Math.sin(t*0.08)*30500;
          Earth.position.z = Math.cos(t*0.08)*33500;
 
+         moon.position.x = Math.sin(t*0.08);
+         moon.position.z = Math.cos(t*0.08);
+
     
-         Mars.position.x = Math.sin(t*0.06)*398200;
-         Mars.position.z = Math.cos(t*0.06)*398200;
+         Mars.position.x = Math.sin(t*0.06)*39200;
+         Mars.position.z = Math.cos(t*0.06)*39200;
 
          Jupiter.position.x = Math.sin(t*0.08)*47200;
          Jupiter.position.z = Math.cos(t*0.08)*47200;
 
  
-         Saturn.position.x = Math.sin(t*0.05)*(-57200);
-         Saturn.position.z = Math.cos(t*0.05)*(-57200);
+         Saturn.position.x = Math.sin(t*0.05)*(57200);
+         Saturn.position.z = Math.cos(t*0.05)*(57200);
 
         
          Uranus.position.x = Math.sin(t*0.03)*65200;
          Uranus.position.z = Math.cos(t*0.03)*65200;
 
         
-         Neptune.position.x = Math.sin(t*0.01)*(-80200);
-         Neptune.position.z = Math.cos(t*0.01)*(-80200);
+         Neptune.position.x = Math.sin(t*0.01)*(80200);
+         Neptune.position.z = Math.cos(t*0.01)*(80200);
 
         // camera.position.y = 8000;
          camera.lookAt(sun.position);
@@ -375,7 +367,7 @@ session_start();
                 camera.lookAt(Earth.position);
             }
             if(camera.position.x<Earth.position.x-300){
-                camera.position.x+=20;
+                camera.position.x+=120;
             }
             break;
             case 4:
@@ -405,8 +397,8 @@ session_start();
                 camera.position.y = 400;
                 camera.lookAt(Saturn.position);
             }
-            if(camera.position.x<Saturn.position.x-300){
-                camera.position.x+=40;
+            if(camera.position.x<Saturn.position.x-1700){
+                camera.position.x+=150;
             }
             break;
             case 7:
