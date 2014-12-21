@@ -97,7 +97,7 @@ nav li #login-content {
   margin: 10px 0 0 0;
 }
 .main_backg{
-	background-image: url(http://the8guild.com/themes/wordpress/domino/apps/wp-content/uploads/sites/2/2014/10/main_slide_01.jpg);
+	background-image: url(../back.jpg);
 background-position: 20% 0px;
 background-size: 109%;
 width: 100%;
@@ -116,7 +116,7 @@ color: brown;
 .main_platform{
 	position: relative;
 background: rgba(0, 0, 0, 0.41);
-height: 600;
+height: auto;
 top: 90px;
 }
 
@@ -146,4 +146,98 @@ border-top: 1px solid black;
 	padding-top: 10px;
 	text-align: center;
 	color: white;
+}
+img{
+	margin-right: 33px;
+}
+.sub_button{
+	margin-bottom: 30px;
+}
+
+.nav_bar_soler_system{
+	position: absolute !important;
+
+}
+
+   
+   
+ 
+
+
+  .name_planet_btn{
+  	 border: 0px;
+width: 64px;
+height: 64px;
+background-image: url("../images/mercur.jpg");
+background-repeat: no-repeat;
+padding: 2px 8px;
+cursor: pointer;
+}
+.name_planet_btn1{
+	 border: 0px;
+width: 64px;
+height: 64px;
+background-image: url("../images/venus.jpg");
+background-repeat: no-repeat;
+padding: 2px 8px;
+cursor: pointer;
+}
+.name_planet_btn2{
+	 border: 0px;
+width: 64px;
+height: 64px;
+background-image: url("../images/zemla.jpg");
+background-repeat: no-repeat;
+padding: 2px 8px;
+cursor: pointer;
+}
+.name_planet_btn3{
+	 border: 0px;
+width: 64px;
+height: 64px;
+background-image: url("../images/mars.jpg");
+background-repeat: no-repeat;
+padding: 2px 8px;
+cursor: pointer;
+}
+.name_planet_btn4{
+	 border: 0px;
+width: 64px;
+height: 64px;
+background-image: url("../images/jupiter.jpg");
+background-repeat: no-repeat;
+padding: 2px 8px;
+cursor: pointer;
+}
+.name_planet_btn5{
+	 border: 0px;
+width: 64px;
+height: 64px;
+background-image: url("../images/Saturn_icon.jpg");
+background-repeat: no-repeat;
+padding: 2px 8px;
+cursor: pointer;
+}
+.name_planet_btn6{
+	 border: 0px;
+width: 64px;
+height: 64px;
+background-image: url("../images/uran.jpg");
+background-repeat: no-repeat;
+padding: 2px 8px;
+cursor: pointer;
+}
+.name_planet_btn7{
+	 border: 0px;
+width: 64px;
+height: 64px;
+background-image: url("../images/neptun.jpg");
+background-repeat: no-repeat;
+padding: 2px 8px;
+}
+
+ .name_planet_btn, .name_planet_btn1, .name_planet_btn2, .name_planet_btn3, .name_planet_btn4, .name_planet_btn5, .name_planet_btn6, .name_planet_btn7{
+	margin-left: 75px;
+	color: white;
+
 }
