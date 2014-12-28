@@ -1,23 +1,23 @@
-   <?php
+<?php
    session_start();
    echo "<div id =\"usname\">$_SESSION[log]</div>";
     ?>
     <html>
     <head>
     <style type="text/css">
-    .comments {
-  border: 1px solid green;
-  width: 300px;
-  text-align: center;
-  border-radius: 5px;
-  margin: 0 auto 10px;
-              }
+   
 .comments span {
   font-family: Tahoma;
                }
  #usname {
     display: none;
-        }              
+        }   
+        textarea{
+          opacity: 0.8;
+margin-top: 100px;
+        }         
+      
+
     </style>
     </head>
     <body>
@@ -25,10 +25,22 @@
     <?php
 if (!empty($_SESSION['log']))
       echo"
- <form method=\"post\"><span>Комментарий</span><br>
-  <textarea id=\"comment_send\" cols=\"30\" rows=\"10\"></textarea><br>
-  <button id=\"button\">Отправить</button>";
-  else echo "<div class='alert alert-danger' role='alert'>Чтобы видеть и оставлять комментарии вы должны войти на сайт!</div>";
+ <form method=\"post\" style='
+    margin-bottom: 0px;'>
+  <textarea id=\"comment_send\" class='form-control' rows=\"5\" style='
+    margin-left: 10%;
+    margin-bottom: 0%;
+    width: 81%;
+'></textarea><br>
+  <button class='btn btn-success' id=\"button\" style=\"
+    margin-left: 84%;
+    margin-bottom: 10px;\">Отправить</button>";
+  else echo "<div class='alert alert-danger'  role='alert' style=\"
+    margin-top: 120;
+    width: 81%;
+    margin-left: 10%;
+  
+\"> Чтобы видеть и оставлять комментарии вы должны войти на сайт!</div>";
   ?>
    <script>
        var ar_title = document.getElementById('title').innerHTML;
@@ -70,10 +82,9 @@ if (!empty($_SESSION['log']))
          var text = data[i].name;
          var textNode = document.createTextNode(text);
          elem.appendChild(textNode);
-         elem = document.createElement('hr');
          parent.appendChild(elem);
          elem = document.createElement('div');
-         elem.className = 'comments';
+         elem.className = 'comments1';
          parent.appendChild(elem);
          newimg_path = data[i].img;
          new_img = document.createElement("img");
@@ -81,7 +92,15 @@ if (!empty($_SESSION['log']))
          new_img.setAttribute("width",40);
          new_img.setAttribute("height",50);
          elem.appendChild(new_img);
-        elem = document.createElement('hr');
+
+         parent.appendChild(elem);
+         elem = document.createElement('div');
+         elem.className = 'comment1';
+         parent.appendChild(elem);
+         text = data[i].comment;
+         textNode = document.createTextNode(text);
+         elem.appendChild(textNode);
+
          parent.appendChild(elem);
          elem = document.createElement('div');
          elem.className = 'comment';
@@ -89,14 +108,8 @@ if (!empty($_SESSION['log']))
          text = data[i].date;
          textNode = document.createTextNode(text);
          elem.appendChild(textNode);
-         elem = document.createElement('hr');
-         parent.appendChild(elem);
-         elem = document.createElement('div');
-         elem.className = 'comment';
-         parent.appendChild(elem);
-         text = data[i].comment;
-         textNode = document.createTextNode(text);
-         elem.appendChild(textNode);
+
+         
          var max = data[i].id;
         }
         count = max;
@@ -109,5 +122,4 @@ if (!empty($_SESSION['log']))
     }, 3000);
    }
    </script>
-</body>
-   </html>
+
