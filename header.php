@@ -39,12 +39,12 @@ $('#login-trigger').click(function(){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="main.php">Solar System</a>
+          <a  class="navbar-brand" href="index.php">Solar System</a>
           <ul class="nav navbar-nav">
-            <li class="active"><a href="main.php">Главная</a></li>
-            <li><a href="#about">Новости</a></li>
-            <li><a href="#contact">Энциклопедия</a></li>
-               <li><a href="#gelery">Галерея</a></li>
+            <li class="main active"><a href="index.php">Главная</a></li>
+            <li class="new"><a href="news.php">Новости</a></li>
+            <li class="ency"><a href="encyclopedia.php">Энциклопедия</a></li>
+               <li class="gall"><a href="gallery.php">Галерея</a></li>
            
           </ul>
         </div>
