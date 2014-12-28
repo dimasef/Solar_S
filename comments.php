@@ -32,9 +32,9 @@ if (!empty($_SESSION['log']))
     margin-bottom: 0%;
     width: 81%;
 '></textarea><br>
-  <button class='btn btn-success' id=\"button\" style=\"
+  <a class='btn btn-success' id=\"button\" style=\"
     margin-left: 84%;
-    margin-bottom: 10px;\">Отправить</button>";
+    margin-bottom: 10px;\">Отправить</a>";
   else echo "<div class='alert alert-danger'  role='alert' style=\"
     margin-top: 120;
     width: 81%;
